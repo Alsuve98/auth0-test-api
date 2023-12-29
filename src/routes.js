@@ -5,12 +5,10 @@ var qs = require('qs');
 
 // init route
 router.get('/', (req, res) => {
-    // Si el usuario está autenticado, redirigir a su perfil
     if (req.isAuthenticated()) {
         return res.redirect('/profile');
     }
 
-    // Si no está autenticado, redirigir a la página de inicio de sesión
     return res.redirect('/login');
 });
 
